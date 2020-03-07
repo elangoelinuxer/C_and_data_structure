@@ -28,7 +28,7 @@ input_val = malloc(sizeof(int));
 printf("Enter input: ");
 scanf("%d",input_val);
 
-printf("Input Entered: %d\n",*input_val);
+printf("Input Entered:  %d\n",*input_val);
 
 
 print_binary(input_val);
