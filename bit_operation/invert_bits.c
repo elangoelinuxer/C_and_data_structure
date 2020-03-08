@@ -32,6 +32,7 @@ int main()
 	invert_bits(input_val);
 	
 	print_binary(input_val);
+        free(input_val);
 }
 
 

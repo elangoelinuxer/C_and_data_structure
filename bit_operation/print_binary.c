@@ -32,7 +32,7 @@ printf("Input Entered:  %d\n",*input_val);
 
 
 print_binary(input_val);
-
+free(input_val);
 
 }
 

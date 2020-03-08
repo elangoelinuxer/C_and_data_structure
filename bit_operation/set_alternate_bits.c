@@ -44,4 +44,5 @@ int main()
 	set_alternate(input_val);
 
 	print_binary(input_val);
+	free(input_val);
 }
