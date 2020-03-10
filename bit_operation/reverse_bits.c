@@ -23,17 +23,52 @@ void print_binary(int *rec_val)
 			++j;
 		}
 
-
 	}
 
 	printf("\n");
 
 }
 
-void invert_bit(int *input_val,int bit_no)
+void reverse_bits(int *input_val)
 {
 
-	*input_val= *input_val ^  (1 << bit_no);
+	char LSB,MSB;
+
+	for(int i=0,j=31;i<=15;i++,j--)
+	{
+
+
+		if(*input_val & (1<<i))
+		{
+			LSB = 1;
+		}
+		else
+		{
+			LSB = 0;
+		}
+
+		if(*input_val & (1<<j))
+		{
+			MSB = 1;
+		}
+		else
+		{
+			MSB = 0;
+		}
+
+		if(LSB == MSB)
+		{
+			continue;
+		}
+		else
+		{
+
+			*input_val= *input_val ^ (1 << i);
+			*input_val= *input_val ^ (1 << j);
+
+		}
+
+	}
 
 }
 
@@ -47,14 +82,18 @@ int main()
 	printf("Enter input: ");
 	scanf("%d",input_val);
 
-	printf("Enter the bitnumber to invert \n");
-	scanf("%d",&bit_no);
-	
-	print_binary(input_val);
 
-	invert_bit(input_val,bit_no);
+	reverse_bits(input_val);
+
 
 	print_binary(input_val);
+
+
+
+
+
+
+
 
 
 	free(input_val);
